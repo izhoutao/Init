@@ -1,0 +1,11 @@
+CompWeight_lb
+CompCGs_in
+TransInertiaLbsInch2
+CompInertiaLbsInch2
+IxxLbsInch2
+IyyLbsInch2
+IzzLbsInch2
+IxyLbsInch2
+IyzLbsInch2
+WeightLb
+InertiaSlugFt2
