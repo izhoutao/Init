@@ -1,10 +1,11 @@
-
 #include "Utils.h"
+#include<windows.h>
 #include "ARJ21_init.h"                /* Model's header file */
 #include <regex>
 #define SIGNAL_MAP_ASSIGNMENT(STRUCT,KEY) signalMap[#KEY] = Signal(#KEY, &##STRUCT.##KEY)
 #define PARAM_MAP_ASSIGNMENT_INPUT(STRUCT,KEY) paramMap[#KEY] =  &##STRUCT.##KEY
 #define PARAM_MAP_ASSIGNMENT(KEY) paramMap[#KEY] = &##KEY
+
 Utils::Utils(SimConfig config)
 {
 	SIGNAL_MAP_ASSIGNMENT(ARJ21_init_B, owe_lb);
@@ -27,7 +28,9 @@ Utils::Utils(SimConfig config)
 	SIGNAL_MAP_ASSIGNMENT(ARJ21_init_B, WeightLb);
 	SIGNAL_MAP_ASSIGNMENT(ARJ21_init_B, fuel_lb);
 	SIGNAL_MAP_ASSIGNMENT(ARJ21_init_B, Filter_Reset);
+
 	PARAM_MAP_ASSIGNMENT_INPUT(ARJ21_init_U, FuelFlowLbSec);
+
 	PARAM_MAP_ASSIGNMENT(Flight_InertiaSelect);
 	PARAM_MAP_ASSIGNMENT(Flight_Trimming);
 	PARAM_MAP_ASSIGNMENT(Flight_ixx);
@@ -41,6 +44,9 @@ Utils::Utils(SimConfig config)
 	PARAM_MAP_ASSIGNMENT(Flight_xcg);
 	PARAM_MAP_ASSIGNMENT(Flight_ycg);
 	PARAM_MAP_ASSIGNMENT(Flight_zcg);
+
+
+
 	this->config = config;
 	try
 	{
